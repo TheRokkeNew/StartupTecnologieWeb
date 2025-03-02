@@ -5,6 +5,10 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // Route di autenticazione predefinite di Laravel
 Auth::routes();
 
