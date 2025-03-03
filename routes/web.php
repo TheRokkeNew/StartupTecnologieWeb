@@ -7,9 +7,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
 
+//homepage
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('homepage');
+})->name('homepage');;
 
 // Route di autenticazione predefinite di Laravel
 Auth::routes();
@@ -28,10 +29,6 @@ Route::get('/interface', function () {
 // Route per la home (dopo il login)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//homepage
-Route::get('/homepage', function () {
-    return view('homepage');
-})->name('homepage');
 
 //report e statistiche
 //mostra la lista di transazioni con i filtri 
