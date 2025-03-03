@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ExportController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route di autenticazione predefinite di Laravel
 Auth::routes();
@@ -21,3 +27,14 @@ Route::get('/interface', function () {
 
 // Route per la home (dopo il login)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//homepage
+Route::get('/homepage', function () {
+    return view('homepage');
+})->name('homepage');
+
+//report e statistiche
+//mostra la lista di transazioni con i filtri 
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+//esporta i dati in Excel 
+Route::get('/transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
