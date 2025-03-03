@@ -29,6 +29,9 @@ Route::get('/interface', function () {
 // Route per la home (dopo il login)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+use App\Http\Controllers\SelectUserController;
+
+Route::get('/select-user', [SelectUserController::class, 'showSelectUserPage'])->name('select-user');
 
 //report e statistiche
 //mostra la lista di transazioni con i filtri 
