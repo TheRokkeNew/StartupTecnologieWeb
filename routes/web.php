@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\SelectUserController;
 
 //homepage
 Route::get('/', function () {
@@ -26,10 +27,7 @@ Route::get('/interface', function () {
     return view('interfaccia');
 });
 
-// Route per la home (dopo il login)
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-use App\Http\Controllers\SelectUserController;
 
 Route::get('/select-user', [SelectUserController::class, 'showSelectUserPage'])->name('select-user');
 
