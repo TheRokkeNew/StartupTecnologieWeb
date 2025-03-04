@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SelectUserController;
+use App\Http\Controllers\dashboardcontroller;
 
 //homepage
 Route::get('/', function () {
@@ -21,6 +22,7 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/dashboard', [dashboardcontroller::class, 'index'])->name('dashboard');
 
 // Altre route
 Route::get('/interface', function () {
@@ -36,3 +38,6 @@ Route::get('/select-user', [SelectUserController::class, 'showSelectUserPage'])-
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 //esporta i dati in Excel 
 Route::get('/transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
+
+
+

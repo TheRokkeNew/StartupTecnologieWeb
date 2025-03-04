@@ -1,3 +1,29 @@
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "finance_db");
+if ($conn->connect_error) {
+    die("Connessione fallita: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["add"])) {
+        $categoria = $_POST["categoria"];
+        $importo = $_POST["importo"];
+        $data = $_POST["data"];
+        $stmt = $conn->prepare("INSERT INTO transazioni (categoria, importo, data) VALUES (?, ?, ?)");
+        $stmt->bind_param("sds", $categoria, $importo, $data);
+        $stmt->execute();
+        $stmt->close();
+    }
+    if (isset($_POST["delete"])) {
+        $id = $_POST["id"];
+        $conn->query("DELETE FROM transazioni WHERE id=$id");
+    }
+}
+
+$transazioni = $conn->query("SELECT * FROM transazioni ORDER BY data DESC");
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
