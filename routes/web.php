@@ -8,6 +8,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SelectUserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransazioneController;
 
 //homepage
 Route::get('/', function () {
@@ -24,6 +25,7 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('transazioni', TransazioneController::class);
 
 // Altre route
 Route::get('/interface', function () {
