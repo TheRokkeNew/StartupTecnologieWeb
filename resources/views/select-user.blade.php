@@ -3,6 +3,11 @@
 @section('title', 'Seleziona Utente - FamilyFinance')
 
 @section('content')
+<style>
+    body {
+        background-color: #c6e9f9; 
+    }
+</style>
 <div class="container">
     <!-- Titolo della Pagina -->
     <h1 class="text-center mt-4 mb-5">FAMILY FINANCE</h1>
