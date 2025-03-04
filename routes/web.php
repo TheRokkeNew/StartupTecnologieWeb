@@ -8,10 +8,6 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SelectUserController;
 use App\Http\Controllers\DashboardController;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 //homepage
 Route::get('/', function () {
@@ -26,10 +22,7 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Altre route
