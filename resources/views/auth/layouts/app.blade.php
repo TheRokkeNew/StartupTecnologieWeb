@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 <html lang="it">
+<nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FamilyFinance</a>
+    </div>
+</nav>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
