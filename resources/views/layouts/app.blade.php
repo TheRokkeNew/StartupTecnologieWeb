@@ -27,27 +27,12 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="/">FamilyFinance</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-        
+    <div class="wrapper">        
         <div class="content">
             <div class="container mt-4">
                 @yield('content')
             </div>
         </div>
-        
-        <footer class="footer">
-            <div class="container">
-                <p class="mb-0">&copy; 2025 FamilyFinance - Tutti i diritti riservati</p>
-            </div>
-        </footer>
     </div>
 </body>
 </html>
