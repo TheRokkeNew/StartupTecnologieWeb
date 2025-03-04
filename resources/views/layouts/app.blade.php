@@ -27,40 +27,12 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="/">FamilyFinance</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Profilo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-danger" href="#">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
+    <div class="wrapper">        
         <div class="content">
             <div class="container mt-4">
                 @yield('content')
             </div>
         </div>
-        
-        <footer class="footer">
-            <div class="container">
-                <p class="mb-0">&copy; 2025 FamilyFinance - Tutti i diritti riservati</p>
-            </div>
-        </footer>
     </div>
 </body>
 </html>
