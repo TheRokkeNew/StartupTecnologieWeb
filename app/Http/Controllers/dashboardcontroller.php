@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transazione;
 
-class dashboardcontroller extends Controller
+class DashboardController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         // Simulazione dati utente
         $user = [
             "nome" => "Mario Rossi",
@@ -16,18 +18,9 @@ class dashboardcontroller extends Controller
             "risparmi" => 500.00
         ];
 
-        $transazioni = [
-            ["data" => "2025-03-01", "categoria" => "Spesa", "importo" => -50.00],
-            ["data" => "2025-02-28", "categoria" => "Stipendio", "importo" => 2500.00],
-            ["data" => "2025-02-25", "categoria" => "Bollette", "importo" => -150.00],
-            ["data" => "2025-02-20", "categoria" => "Ristorante", "importo" => -80.00]
-        ];
+        // Recupera le transazioni recenti
+        $transazioni = Transazione::orderBy('data', 'desc')->take(5)->get();
 
-        // Caricare la vista della dashboard
-        //require_once __DIR__ . '/../Views/dashboard.php';
-        return view('dashboard');
+        return view('dashboard', compact('user', 'transazioni'));
     }
 }
-
-
-    

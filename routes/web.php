@@ -7,7 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SelectUserController;
-use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\DashboardController;
+
 
 //homepage
 Route::get('/', function () {
@@ -23,9 +24,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Altre route
 Route::get('/interface', function () {
