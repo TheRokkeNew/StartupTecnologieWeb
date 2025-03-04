@@ -50,11 +50,5 @@
         </div>
     </div>
 
-    <!-- Bottone per Aggiungere un Utente -->
-    <div class="text-center mt-5">
-        <button class="btn btn-primary btn-lg">
-            <i class="bi bi-plus-circle"></i> AGGIUNGI UTENTE
-        </button>
-    </div>
 </div>
 @endsection
