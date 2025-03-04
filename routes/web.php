@@ -6,10 +6,14 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\SelectUserController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransazioneController;
 
+//homepage
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('homepage');
+})->name('homepage');;
 
 // Route di autenticazione predefinite di Laravel
 Auth::routes();
@@ -20,21 +24,23 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('transazioni', TransazioneController::class);
+
 // Altre route
 Route::get('/interface', function () {
     return view('interfaccia');
 });
 
-// Route per la home (dopo il login)
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//homepage
-Route::get('/homepage', function () {
-    return view('homepage');
-})->name('homepage');
+
+Route::get('/select-user', [SelectUserController::class, 'showSelectUserPage'])->name('select-user');
 
 //report e statistiche
 //mostra la lista di transazioni con i filtri 
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 //esporta i dati in Excel 
 Route::get('/transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
+
+
+

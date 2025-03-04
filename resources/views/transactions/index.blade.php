@@ -1,5 +1,10 @@
 @extends('layouts.app') 
 @section('content')
+<style>
+    body {
+        background-color: #c6e9f9; 
+    }
+</style>
 <div class="container">
     <h1 class="mb-4">Report & Statistiche</h1>    
 

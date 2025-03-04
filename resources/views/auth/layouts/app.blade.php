@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+@extends('layouts.app')
 <html lang="it">
 <head>
+<nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FamilyFinance</a>
+    </div>
+</nav>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'FamilyFinance')</title>
