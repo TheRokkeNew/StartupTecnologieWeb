@@ -22,7 +22,10 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
-Route::get('/dashboard', [dashboardcontroller::class, 'index'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 // Altre route
 Route::get('/interface', function () {

@@ -24,7 +24,8 @@ class dashboardcontroller extends Controller
         ];
 
         // Caricare la vista della dashboard
-        require_once __DIR__ . '/../Views/dashboard.php';
+        //require_once __DIR__ . '/../Views/dashboard.php';
+        return view('dashboard');
     }
 }
 
